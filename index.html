@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <title>Drum Machine</title>
+    <link href="style.css" rel="stylesheet">
+    <script>
+      function play(str) {
+
+        if(str === 'q' || str === 'Q'){
+          document.getElementById('display').innerText = 'RedParot';
+          let picture1 = './images/redparrot.jpg'
+          document.getElementById('pic').src = picture1;
+        }else if (str === 'w' || str === 'W') {
+          document.getElementById('display').innerText = 'Cricket';
+          let picture2 = './images/cricket.jpg'
+          document.getElementById('pic').src = picture2
+        } else if (str === 'e' || str === 'E') {
+          document.getElementById('display').innerText = 'Specht';
+          let picture3 = './images/specht.jpg'
+          document.getElementById('pic').src = picture3
+        }else if (str === 'a' || str === 'A') {
+          document.getElementById('display').innerText = 'Australian Frogmouth';
+          let picture4 = './images/australianfrogmouth.jpg'
+          document.getElementById('pic').src = picture4
+        }else if (str === 's' || str === 'S') {
+          document.getElementById('display').innerText = 'Bee';
+          let picture5 = './images/bee.jpg'
+          document.getElementById('pic').src = picture5
+        }else if (str === 'd' || str === 'D') {
+          document.getElementById('display').innerText = 'Spatz';
+          let picture6 = './images/spatz.jpg'
+          document.getElementById('pic').src = picture6
+        }else if (str === 'z' || str === 'Z') {
+          document.getElementById('display').innerText = 'Yellow rumped warbler';
+          let picture7 = './images/yellowerumper.jpg'
+          document.getElementById('pic').src = picture7
+        }else if (str === 'x' || str === 'X') {
+          document.getElementById('display').innerText = 'Owl';
+          let picture8 = './images/owl.jpg'
+          document.getElementById('pic').src = picture8
+        }else if (str === 'c' || str === 'C') {
+          document.getElementById('display').innerText = 'Kanarien Vogel';
+          let picture9 = './images/kanarienvogel.jpg'
+          document.getElementById('pic').src = picture9
+        };
+
+        var audio = document.getElementById(str);
+        audio.play();
+      }
+
+      window.document.onkeyup = function(click) {
+        let keyclick = click.key
+        if(keyclick === 'q' || keyclick === 'Q'){
+          play('Q');
+        }else if (keyclick === 'w' || keyclick === 'W') {
+          play('W')
+        } else if (keyclick === 'e' || keyclick === 'E') {
+          play('E')
+        }else if (keyclick === 'a' || keyclick === 'A') {
+          play('A')
+        }else if (keyclick === 's' || keyclick === 'S') {
+          play('S')
+        }else if (keyclick === 'd' || keyclick === 'D') {
+          play('D')
+        }else if (keyclick === 'z' || keyclick === 'Z') {
+          play('Z')
+        }else if (keyclick === 'x' || keyclick === 'X') {
+          play('X')
+        }else if (keyclick === 'c' || keyclick === 'C') {
+          play('C')
+        };
+      }
+    </script>
+
+  </head>
+
+
+  <body class='bg-info'>
+    <div class="container text-center" id="drum-machine">
+
+      <button type="button" class='drum-pad btn btn-warning' id='drum-1' onclick="play('Q')">
+        Q
+        <audio class="clip" id="Q" src="./audioF/Q-RedParot.mp3">
+      </button>
+
+      <button type="button" class='drum-pad btn btn-success' id='drum-2' onclick="play('W')">
+        W
+        <audio class="clip" id="W" src="./audioF/W-cricket.mp3"></audio>
+      </button>
+
+      <button type="button" class='drum-pad btn btn-warning' id='drum-3' onclick="play('E')">
+        E
+        <audio class="clip" id="E" src="./audioF/E-specht.mp3"></audio>
+      </button>
+
+      <button type="button" class='drum-pad btn btn-success' id='drum-4' onclick="play('A')">
+        A
+        <audio class="clip" id="A" src="./audioF/A-AustralianFrogmouth.mp3"></audio>
+      </button>
+
+      <button type="button" class='drum-pad btn btn-warning' id='drum-5' onclick="play('S')">
+        S
+        <audio class="clip" id="S" src="./audioF/S-bee.mp3"></audio>
+      </button>
+
+      <button type="button" class='drum-pad btn btn-success' id='drum-6' onclick="play('D')">
+        D
+        <audio class="clip" id="D" src="./audioF/D-spatz.mp3"></audio>
+      </button>
+
+      <button type="button" class='drum-pad btn btn-warning' id='drum-7' onclick="play('Z')">
+        Z
+        <audio class="clip" id="Z" src="./audioF/Z-yellowrumpedwarbler.mp3"></audio>
+      </button>
+
+      <button type="button" class='drum-pad btn btn-success' id='drum-8' onclick="play('X')">
+        X
+        <audio class="clip" id="X" src="./audioF/X-owl.mp3"></audio>
+      </button>
+
+      <button type="button" class='drum-pad btn btn-warning' id='drum-9' onclick="play('C')">
+        C
+        <audio class="clip" id="C" src="./audioF/C-kanarienvogel.mp3"></audio>
+      </button>
+
+
+      <div class = 'py-5'>
+        <div class="card mx-auto py-5" style="width: 18rem;">
+          <img id='pic' class="card-img-top" >
+          <div class="card-body">
+            <h5 class="card-title" id='display'>click on related keys to hear the beards</h5>
+            <p class="card-text"></p>
+            <a href="#" class="btn btn-primary">Go somewhere!</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!---<script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js" /> -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js" integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT" crossorigin="anonymous"></script>
+
+  </body>
+</html>
